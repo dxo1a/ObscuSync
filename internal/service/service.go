@@ -9,36 +9,41 @@ import (
 )
 
 type Service struct {
+	config  *config.Manager
 	scanner *scanner.Scanner
 	builder *manifest.Builder
-	loader  *config.Loader
+	storage *manifest.Storage
 }
 
-func New() *Service {
+func New(
+	cfg *config.Manager,
+	scanner *scanner.Scanner,
+	builder *manifest.Builder,
+	storage *manifest.Storage,
+) *Service {
+
 	return &Service{
-		scanner: scanner.New(),
-		builder: manifest.New(),
-		loader:  config.NewLoader(),
+		config:  cfg,
+		scanner: scanner,
+		builder: builder,
+		storage: storage,
 	}
 }
 
 func (s *Service) Scan(profileName string) (*ScanResult, error) {
-	err := s.loader.Load("configs/config.yaml")
+
+	profile, err := s.config.Profile(profileName)
 	if err != nil {
 		return nil, err
 	}
 
-	profile, err := s.loader.FindProfile(profileName)
-	if err != nil {
-		return nil, err
-	}
-
-	game, err := s.loader.FindGame(profile)
+	game, err := s.config.Game(profile)
 	if err != nil {
 		return nil, err
 	}
 
 	var scanFolders []string
+
 	for _, folder := range game.ScanFolders {
 		scanFolders = append(
 			scanFolders,
@@ -53,12 +58,16 @@ func (s *Service) Scan(profileName string) (*ScanResult, error) {
 
 	m := s.builder.Build(files)
 
-	err = manifest.Save("manifest.json", m)
-	if err != nil {
+	if err := s.storage.Save(profile.Name, m); err != nil {
 		return nil, err
 	}
 
 	return &ScanResult{
 		FileCount: len(files),
+		Manifest: filepath.Join(
+			"data",
+			"manifests",
+			profile.Name+".json",
+		),
 	}, nil
 }

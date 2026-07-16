@@ -1,0 +1,116 @@
+{
+  "version": 1,
+  "created_at": "2026-07-16T12:33:09.7378418Z",
+  "files": [
+    {
+      "path": "mods/BottleneckLite_1.3.4.zip",
+      "size": 45714,
+      "sha256": "23785ae56c820e174641ddc1bc38318c2413841e4a4d1779d5c3d6199be6374b"
+    },
+    {
+      "path": "mods/ChangeInserterDropLane_1.2.0.zip",
+      "size": 305568,
+      "sha256": "8773256dfddbc2c504aa98e6c1323fbbcee792a4240594fccdb5ba2c07983c74"
+    },
+    {
+      "path": "mods/CleanFloor_2.0.0.zip",
+      "size": 24718,
+      "sha256": "8a78cf2aa6126f3ef72469d07d91c9b6b1c45d761f2891ce56e7e2e76e5d8a42"
+    },
+    {
+      "path": "mods/Dectorio_0.13.1.zip",
+      "size": 37618914,
+      "sha256": "d93624d1879b0f8e050a4a1b843c0c549e460de389dcb4b8dc460b72e24e4254"
+    },
+    {
+      "path": "mods/RateCalculator_3.3.8.zip",
+      "size": 92238,
+      "sha256": "fe6776d809e70f1b6d979d1eb7e47b11cace0aebc15bb6625631366cdd857635"
+    },
+    {
+      "path": "mods/StatsGui_1.6.1.zip",
+      "size": 34632,
+      "sha256": "2c9a4554d9315f8066b60c61a620d1331efdbcd25e0d47ec7b2b79595041df87"
+    },
+    {
+      "path": "mods/Todo-List_19.15.2.zip",
+      "size": 55332,
+      "sha256": "364cb0cae4b18d18ce68059895ad8fb205eb43b8d449d27427d5fdebdbfe2035"
+    },
+    {
+      "path": "mods/aai-signal-transmission_0.5.3.zip",
+      "size": 17609532,
+      "sha256": "dd7559167b69f9a0aff10ad5e93e0e23a5fa1f34b64e4ce12e3b53dc763161d7"
+    },
+    {
+      "path": "mods/aai-signals_0.7.1.zip",
+      "size": 118492,
+      "sha256": "412d3c39e22cbeebcc440e1f9d74de6c3106db33817781e8b91317753a71b069"
+    },
+    {
+      "path": "mods/belt-visualizer_2.0.2.zip",
+      "size": 126815,
+      "sha256": "96377fa6e341e0c9534974cd6dafb0b6afba00b015b28e5cb5867fd5de389f74"
+    },
+    {
+      "path": "mods/combat-mechanics-overhaul_0.7.2.zip",
+      "size": 30445,
+      "sha256": "d69dd7cb4a1132663804c1c1222192b715225f1a0697df54f0bf7d80f1a755da"
+    },
+    {
+      "path": "mods/factoryplanner_2.0.50.zip",
+      "size": 507842,
+      "sha256": "7ea90a026c65e385786ba19258fb5282b008ee27a1b4f5acbfc4ac68e98b22b3"
+    },
+    {
+      "path": "mods/flib_0.16.5.zip",
+      "size": 453091,
+      "sha256": "8fc5073d374a149620333777d959d2c204ab0af0c59669be94c5cab7de978627"
+    },
+    {
+      "path": "mods/helmod_2.2.14.zip",
+      "size": 3575611,
+      "sha256": "5b0f00b7eddca81d46ad9d073b8b1af6a51e4a148507db68b67e15f1dbe949f3"
+    },
+    {
+      "path": "mods/mining-patch-planner_1.7.18.zip",
+      "size": 266107,
+      "sha256": "c8ad25bfc6a583bc9249e4aef4594f8d1d89374dfe7af093ea196649797ce416"
+    },
+    {
+      "path": "mods/mod-list.json",
+      "size": 1668,
+      "sha256": "31a0ebff14c80415aa843010b90fb78c221ba9f11c6591c0729ba1338e26c0cc"
+    },
+    {
+      "path": "mods/mod-settings.dat",
+      "size": 6706,
+      "sha256": "8c74684ddaadd71c3f483c441910dd372d53dbedb1c18e6e9e5b48507467174f"
+    },
+    {
+      "path": "mods/resourceMarker_0.8.33.zip",
+      "size": 60176,
+      "sha256": "a4e01f123046fe932317e047861f0de7f1d25bf41fd6e26ab14a8eb76f33ed42"
+    },
+    {
+      "path": "mods/show-max-underground-distance_0.1.0.zip",
+      "size": 552671,
+      "sha256": "72f5211c3bb78ae2fd11329b625963f55bb8d3ac7b0d57b21af0a22aa61ec24e"
+    },
+    {
+      "path": "mods/squeak-through-2_0.1.5.zip",
+      "size": 50307,
+      "sha256": "7ad0fc4d6f329c79f70029d5a493448ffd71323abb45c6ab87af2449543bbd63"
+    },
+    {
+      "path": "mods/visible-planets_1.7.2.zip",
+      "size": 580067,
+      "sha256": "d77b64ee569b60f8ec3740e4ff64b155e9f064414dff82cb54c2bbe8f166ea36"
+    },
+    {
+      "path": "config/config.ini",
+      "size": 68907,
+      "sha256": "6b272ef83d256493f413b1982da6189b855e0c2ff8d7b9f541e284cca81f579d"
+    }
+  ]
+}
