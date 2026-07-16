@@ -12,45 +12,57 @@ func New() *Scanner {
 	return &Scanner{}
 }
 
-func (s *Scanner) Scan(root string) ([]FileInfo, error) {
+func (s *Scanner) Scan(paths []string) ([]FileInfo, error) {
 	var files []FileInfo
 
-	err := filepath.WalkDir(root, func(path string, d fs.DirEntry, err error) error {
+	for _, root := range paths {
 
-		if err != nil {
-			return err
-		}
+		err := filepath.WalkDir(root, func(path string, d fs.DirEntry, err error) error {
 
-		if d.IsDir() {
+			if err != nil {
+				return err
+			}
+
+			if d.IsDir() {
+				return nil
+			}
+
+			relativePath, err := filepath.Rel(root, path)
+			if err != nil {
+				return err
+			}
+
+			info, err := d.Info()
+			if err != nil {
+				return err
+			}
+
+			hash, err := calculateSHA256(path)
+			if err != nil {
+				return err
+			}
+
+			// Добавляем имя сканируемой папки обратно к пути.
+			// Например:
+			// mods/modA.zip
+			// config/settings.json
+			relativePath = filepath.Join(
+				filepath.Base(root),
+				relativePath,
+			)
+
+			files = append(files, FileInfo{
+				Path:   filepath.ToSlash(relativePath),
+				Size:   info.Size(),
+				SHA256: hash,
+			})
+
 			return nil
-		}
-
-		relativePath, err := filepath.Rel(root, path)
-		if err != nil {
-			return err
-		}
-
-		info, err := d.Info()
-		if err != nil {
-			return err
-		}
-
-		hash, err := calculateSHA256(path)
-		if err != nil {
-			return err
-		}
-
-		files = append(files, FileInfo{
-			Path:   filepath.ToSlash(relativePath),
-			Size:   info.Size(),
-			SHA256: hash,
 		})
 
-		return nil
-	})
-
-	if err != nil {
-		return nil, err
+		if err != nil {
+			return nil, err
+		}
 	}
 
 	return files, nil

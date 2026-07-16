@@ -1,0 +1,9 @@
+profiles:
+
+  - name: factorio
+    game: factorio
+    root: C:\Factorio
+
+  - name: minecraft
+    game: minecraft
+    root: C:\Users\dxo1a\AppData\Roaming\.tlauncher\legacy\Minecraft\game
