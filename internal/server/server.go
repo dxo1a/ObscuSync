@@ -29,7 +29,7 @@ func New(address string, storage *manifest.Storage, cfg *config.Manager) *Server
 }
 
 func (s *Server) Start() error {
-	fmt.Printf("GameSync server listening on %s\n", s.http.Addr)
+	fmt.Printf("ObscuSync server listening on %s\n", s.http.Addr)
 
 	return s.http.ListenAndServe()
 }
