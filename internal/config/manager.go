@@ -28,3 +28,11 @@ func (m *Manager) Game(profile Profile) (Game, error) {
 
 	return game, nil
 }
+
+func (m *Manager) ServerAddress() string {
+	return m.config.Server.Address
+}
+
+func (m *Manager) RemoteAddress() string {
+	return m.config.Remote.Address
+}

@@ -9,10 +9,7 @@ import (
 )
 
 func Run() {
-	cfg, err := config.Load(
-		"configs/config.yaml",
-	)
-
+	cfg, err := config.Load("configs/config.yaml")
 	if err != nil {
 		panic(err)
 	}
@@ -33,6 +30,8 @@ func Run() {
 
 	commandLine := cli.New(
 		syncService,
+		configManager,
+		storage,
 	)
 
 	if err := commandLine.Execute(); err != nil {

@@ -3,17 +3,33 @@ package server
 import (
 	"fmt"
 	"net/http"
+
+	"github.com/dxo1a/obscusync/internal/config"
+	"github.com/dxo1a/obscusync/internal/manifest"
 )
 
-func Start() error {
-	mux := http.NewServeMux()
+type Server struct {
+	http    *http.Server
+	storage *manifest.Storage
+	config  *config.Manager
+}
 
-	mux.HandleFunc("/health", func(w http.ResponseWriter, r *http.Request) {
-		fmt.Println(w, "OK")
-	})
+func New(address string, storage *manifest.Storage, cfg *config.Manager) *Server {
+	s := &Server{
+		storage: storage,
+		config:  cfg,
+	}
 
-	fmt.Println("GameSync server started")
-	fmt.Println("Listening on :8080")
+	s.http = &http.Server{
+		Addr:    address,
+		Handler: s.routes(),
+	}
 
-	return http.ListenAndServe(":8080", mux)
+	return s
+}
+
+func (s *Server) Start() error {
+	fmt.Printf("GameSync server listening on %s\n", s.http.Addr)
+
+	return s.http.ListenAndServe()
 }

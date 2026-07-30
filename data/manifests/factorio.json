@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "created_at": "2026-07-16T12:33:09.7378418Z",
+  "created_at": "2026-07-30T01:57:57.1481054Z",
   "files": [
     {
       "path": "mods/BottleneckLite_1.3.4.zip",
@@ -23,6 +23,11 @@
       "sha256": "d93624d1879b0f8e050a4a1b843c0c549e460de389dcb4b8dc460b72e24e4254"
     },
     {
+      "path": "mods/EditorExtensions_2.5.2.zip",
+      "size": 558878,
+      "sha256": "f7ceb9407f7a765baa8b262abcfb4f375105e9d1056436f5e9d41d525fd18801"
+    },
+    {
       "path": "mods/RateCalculator_3.3.8.zip",
       "size": 92238,
       "sha256": "fe6776d809e70f1b6d979d1eb7e47b11cace0aebc15bb6625631366cdd857635"
@@ -36,11 +41,6 @@
       "path": "mods/Todo-List_19.15.2.zip",
       "size": 55332,
       "sha256": "364cb0cae4b18d18ce68059895ad8fb205eb43b8d449d27427d5fdebdbfe2035"
-    },
-    {
-      "path": "mods/aai-signal-transmission_0.5.3.zip",
-      "size": 17609532,
-      "sha256": "dd7559167b69f9a0aff10ad5e93e0e23a5fa1f34b64e4ce12e3b53dc763161d7"
     },
     {
       "path": "mods/aai-signals_0.7.1.zip",
@@ -58,9 +58,14 @@
       "sha256": "d69dd7cb4a1132663804c1c1222192b715225f1a0697df54f0bf7d80f1a755da"
     },
     {
-      "path": "mods/factoryplanner_2.0.50.zip",
-      "size": 507842,
-      "sha256": "7ea90a026c65e385786ba19258fb5282b008ee27a1b4f5acbfc4ac68e98b22b3"
+      "path": "mods/far-reach_2.0.2.zip",
+      "size": 48987,
+      "sha256": "927a813b607eb151b705af5dde490dc7937c8ceeaa78c11a03785ba88e3c83b8"
+    },
+    {
+      "path": "mods/faster-rocket-silo-animation_1.0.2.zip",
+      "size": 183763,
+      "sha256": "3c1cd79e4da75912ef78a8017d60dad6a556176ba4c68bd4b147a89dd4238ae7"
     },
     {
       "path": "mods/flib_0.16.5.zip",
@@ -79,13 +84,13 @@
     },
     {
       "path": "mods/mod-list.json",
-      "size": 1668,
-      "sha256": "31a0ebff14c80415aa843010b90fb78c221ba9f11c6591c0729ba1338e26c0cc"
+      "size": 1815,
+      "sha256": "47fd14e9361c878fcd7ba8ada0363c2151eff9d063604d10a389ccf61dbae827"
     },
     {
       "path": "mods/mod-settings.dat",
-      "size": 6706,
-      "sha256": "8c74684ddaadd71c3f483c441910dd372d53dbedb1c18e6e9e5b48507467174f"
+      "size": 15067,
+      "sha256": "a84c89590b59da486306806c71b7b3fa0ffa43cd25115f975d7bb9da6d2d9767"
     },
     {
       "path": "mods/resourceMarker_0.8.33.zip",
@@ -98,9 +103,14 @@
       "sha256": "72f5211c3bb78ae2fd11329b625963f55bb8d3ac7b0d57b21af0a22aa61ec24e"
     },
     {
-      "path": "mods/squeak-through-2_0.1.5.zip",
-      "size": 50307,
-      "sha256": "7ad0fc4d6f329c79f70029d5a493448ffd71323abb45c6ab87af2449543bbd63"
+      "path": "mods/smaller-alt-mode_1.0.2.zip",
+      "size": 334914,
+      "sha256": "845bcbb87bfb5323fed9a7790221f9abafb3178409868d166720bf2a8f595cd2"
+    },
+    {
+      "path": "mods/smaller-modules_1.0.0.zip",
+      "size": 337353,
+      "sha256": "a75fc6560f4f103c9c80a872f01f4fffc06be8d3d19a65dc3e045caf6e9514bf"
     },
     {
       "path": "mods/visible-planets_1.7.2.zip",
@@ -108,9 +118,14 @@
       "sha256": "d77b64ee569b60f8ec3740e4ff64b155e9f064414dff82cb54c2bbe8f166ea36"
     },
     {
+      "path": "config/config-serv.ini",
+      "size": 68905,
+      "sha256": "75f3456ebc58a5cce9c85fb73a782f3849207b789e2a3ef6a02f2e2d2dccaed6"
+    },
+    {
       "path": "config/config.ini",
-      "size": 68907,
-      "sha256": "6b272ef83d256493f413b1982da6189b855e0c2ff8d7b9f541e284cca81f579d"
+      "size": 67242,
+      "sha256": "d852cc070d0a79c0391ea8a3799603d973ff1ef332d13cd179af7bdc96572bd2"
     }
   ]
 }

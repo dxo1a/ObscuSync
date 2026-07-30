@@ -19,7 +19,7 @@ func (c *CLI) newRootCommand() *cobra.Command {
 	}
 
 	root.AddCommand(
-		c.newScanCommand(),
+		c.newUpdateManifestCommand(),
 	)
 
 	root.AddCommand(
