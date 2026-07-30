@@ -6,7 +6,6 @@ var registry = map[string]Game{
 		Name: "Factorio",
 		ScanFolders: []string{
 			"mods",
-			"config",
 		},
 	},
 
