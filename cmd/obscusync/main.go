@@ -14,7 +14,7 @@ var Version = "dev"
 
 func main() {
 	if runtime.GOOS == "windows" && mousetrap.StartedByExplorer() {
-		// Перезапускаем себя через cmd /k, чтобы окно не закрывалось
+		// restart ourselves via cmd /k so that the window does not close
 		cmd := exec.Command("cmd", "/k", os.Args[0])
 		cmd.SysProcAttr = &syscall.SysProcAttr{HideWindow: false}
 		cmd.Stdout = os.Stdout
