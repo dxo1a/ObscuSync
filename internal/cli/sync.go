@@ -9,7 +9,7 @@ import (
 func (c *CLI) newSyncCommand() *cobra.Command {
 	return &cobra.Command{
 		Use:   "sync [profile]",
-		Short: "Sync local files with remote server manifest",
+		Short: "Sync local files with remote server manifest (server address in config.yaml)",
 		Args:  cobra.ExactArgs(1),
 		RunE: func(cmd *cobra.Command, args []string) error {
 			result, err := c.service.Sync(args[0])
