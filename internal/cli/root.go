@@ -16,6 +16,8 @@ func (c *CLI) newRootCommand() *cobra.Command {
 				"Use 'gamesync --help' to see available commands.",
 			)
 		},
+		SilenceUsage:  true,
+		SilenceErrors: true,
 	}
 
 	root.AddCommand(
@@ -24,6 +26,10 @@ func (c *CLI) newRootCommand() *cobra.Command {
 
 	root.AddCommand(
 		c.newServeCommand(),
+	)
+
+	root.AddCommand(
+		c.newSyncCommand(),
 	)
 
 	return root

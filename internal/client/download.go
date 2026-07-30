@@ -11,9 +11,13 @@ import (
 	"strings"
 )
 
+// ProgressFunc вызывается во время скачивания (written — уже записано, total — Content-Length или 0).
+type ProgressFunc func(written, total int64)
+
 // DownloadFile качает файл с сервера и сохраняет в destPath.
 // relPath — путь как в манифесте (mods/foo.zip), со слешами.
-func (c *Client) DownloadFile(profile, relPath, destPath string) error {
+// onProgress может быть nil.
+func (c *Client) DownloadFile(profile, relPath, destPath string, onProgress ProgressFunc) error {
 	if profile == "" || relPath == "" {
 		return fmt.Errorf("profile and path are required")
 	}
@@ -37,6 +41,8 @@ func (c *Client) DownloadFile(profile, relPath, destPath string) error {
 		return errStatus(resp, "download "+relPath)
 	}
 
+	total := resp.ContentLength
+
 	if err := os.MkdirAll(filepath.Dir(destPath), 0755); err != nil {
 		return err
 	}
@@ -48,7 +54,16 @@ func (c *Client) DownloadFile(profile, relPath, destPath string) error {
 		return err
 	}
 
-	_, copyErr := io.Copy(out, resp.Body)
+	var reader io.Reader = resp.Body
+	if onProgress != nil {
+		reader = &progressReader{
+			r:          resp.Body,
+			total:      total,
+			onProgress: onProgress,
+		}
+	}
+
+	_, copyErr := io.Copy(out, reader)
 	closeErr := out.Close()
 
 	if copyErr != nil {
@@ -66,6 +81,22 @@ func (c *Client) DownloadFile(profile, relPath, destPath string) error {
 	}
 
 	return nil
+}
+
+type progressReader struct {
+	r          io.Reader
+	total      int64
+	written    int64
+	onProgress ProgressFunc
+}
+
+func (p *progressReader) Read(b []byte) (int, error) {
+	n, err := p.r.Read(b)
+	if n > 0 {
+		p.written += int64(n)
+		p.onProgress(p.written, p.total)
+	}
+	return n, err
 }
 
 func escapePath(relPath string) string {

@@ -22,7 +22,7 @@ func (c *Client) FetchManifest(profile string) (manifest.Manifest, error) {
 
 	resp, err := c.httpClient.Do(req)
 	if err != nil {
-		return m, fmt.Errorf("fetch manifest: %w", err)
+		return m, fmt.Errorf("fetch manifest: %w\n", err)
 	}
 	defer resp.Body.Close()
 

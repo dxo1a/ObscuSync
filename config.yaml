@@ -1,0 +1,16 @@
+server:
+  address: ":26655" # порт, на котором слушаем при gamesync serve
+
+remote:
+  address: "127.0.0.1:26655" # адрес сервера, к которому обращается клиент при синхронизации
+
+profiles:
+  # пример профиля Factorio
+  - name: factorio
+    game: factorio
+    root: C:\Path\To\Factorio
+
+  # пример профиля Minecraft
+  # - name: Minecraft
+  #   game: minecraft
+  #   root: C:\Users\USER\AppData\Roaming\.minecraft
