@@ -42,8 +42,8 @@ func (s *Scanner) Scan(paths []string) ([]FileInfo, error) {
 				return err
 			}
 
-			// Добавляем имя сканируемой папки обратно к пути.
-			// Например:
+			// Adding the name of the scanned folder back to the path
+			// For example:
 			// mods/modA.zip
 			// config/settings.json
 			relativePath = filepath.Join(

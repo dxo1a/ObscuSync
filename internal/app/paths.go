@@ -5,8 +5,8 @@ import (
 	"path/filepath"
 )
 
-// baseDir — каталог, в котором лежит бинарник.
-// config.yaml и data/ всегда относительно него, а не cwd.
+// baseDir - s the directory where the binary is located
+// config.yaml and data/ are always relative to it not cwd
 func baseDir() (string, error) {
 	exe, err := os.Executable()
 	if err != nil {

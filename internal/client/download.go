@@ -47,7 +47,7 @@ func (c *Client) DownloadFile(profile, relPath, destPath string, onProgress Prog
 		return err
 	}
 
-	// пишем во временный файл рядом, потом rename — атомарнее
+	// we write to a temporary file next to it, then rename it because it's more atomic
 	tmpPath := destPath + ".tmp"
 	out, err := os.Create(tmpPath)
 	if err != nil {

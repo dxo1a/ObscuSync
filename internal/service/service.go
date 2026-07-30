@@ -94,7 +94,7 @@ func (s *Service) Sync(profileName string) (*SyncResult, error) {
 		return nil, err
 	}
 
-	// сканируем только существующие папки (на клиенте их может ещё не быть)
+	// scan only existing folders (they may not be on the client yet)
 	var scanFolders []string
 	for _, folder := range game.ScanFolders {
 		p := filepath.Join(profile.Root, folder)

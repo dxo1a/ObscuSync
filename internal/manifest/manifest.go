@@ -2,7 +2,7 @@ package manifest
 
 import "time"
 
-//FileInfo не подходит т.к. FileInfo клиентский, когда как Manifest работает с сетью
+// FileInfo is not suitable because it is client-side when Manifest works with the network
 type File struct {
 	Path   string `json:"path"`
 	Size   int64  `json:"size"`
