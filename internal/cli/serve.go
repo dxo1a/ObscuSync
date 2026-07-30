@@ -8,7 +8,7 @@ import (
 func (c *CLI) newServeCommand() *cobra.Command {
 	return &cobra.Command{
 		Use:   "serve",
-		Short: "Start GameSync HTTP server",
+		Short: "Start HTTP server",
 		RunE: func(cmd *cobra.Command, args []string) error {
 			srv := server.New(
 				c.config.ServerAddress(),
